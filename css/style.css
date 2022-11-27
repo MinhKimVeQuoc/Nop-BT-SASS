@@ -23,9 +23,6 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  #mySidenav {
-    display: block !important;
-  }
   header {
     background-color: #ffffff;
     box-shadow: 0 0 5px -2px;
@@ -37,10 +34,13 @@ body {
   header #open {
     display: block !important;
   }
+  header .closebtn {
+    display: block !important;
+  }
 }
 #mySidenav {
-  display: none;
   width: 320px;
+  z-index: 2;
   background-color: #ffffff;
   scroll-behavior: smooth;
 }
@@ -96,6 +96,9 @@ header {
   transition: all 300ms ease;
 }
 header #open {
+  display: none;
+}
+header .closebtn {
   display: none;
 }
 header .navbar-expand-lg .navbar-brand img {
@@ -199,6 +202,7 @@ header .navbar-expand-lg .navbar-collapse #menu-btnIcon button:hover a {
 }
 #content .container .content-left {
   width: 100%;
+  z-index: 1;
 }
 #content .container .content-left p {
   color: #b61984;
@@ -227,7 +231,7 @@ header .navbar-expand-lg .navbar-collapse #menu-btnIcon button:hover a {
   position: relative;
 }
 #team-us .container .item {
-  padding: 0 20px;
+  margin-bottom: 30px;
 }
 #team-us .container .item .card {
   border: none;
@@ -416,7 +420,7 @@ header .navbar-expand-lg .navbar-collapse #menu-btnIcon button:hover a {
 
 footer {
   color: #ffffff;
-  background-color: #181818;
+  background-color: #aa017e;
   font-size: 14px;
 }
 footer .container p {
@@ -438,11 +442,16 @@ footer .container .new-warp {
 }
 footer .container .new-warp input {
   text-align: center;
+  border: 1px solid #b31b8b;
+  outline: none;
   width: 90%;
   height: 50px;
   border-radius: 25px;
   background-color: transparent;
   color: #ffffff;
+}
+footer .container .new-warp input:focus {
+  border-color: #ffffff;
 }
 footer .container .new-warp button {
   padding: 12px 80px !important;

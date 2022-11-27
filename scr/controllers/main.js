@@ -6,7 +6,7 @@ function openNav() {
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("main").style= " margin left :0";
 }
 
 function getEle(id) {
@@ -31,33 +31,32 @@ function scrollFunction() {
     //   getEle("header").classList.remove('header-fixed')
     //   getEle("header").style.top = "0"
     // }
-   
 
-        if (window.scrollY <= 100) {
-          getEle("header").style.position = 'absolute';
-          getEle("header").classList.remove('header-fixed')
-          getEle("header").style.top = "0";
-        }
 
-        if (window.scrollY >= 225) {
-          getEle("header").style.position = 'fixed';
-          getEle("header").style.top = "-89px";
-        }
+    if (window.scrollY <= 100) {
+      getEle("header").style.position = 'absolute';
+      getEle("header").classList.remove('header-fixed')
+      getEle("header").style.top = "0";
+    }
 
-        if (window.scrollY >= 228) {
-          getEle("header").classList.add('header-fixed')
-          if (timer != null) {
-            this.clearTimeout(timer);
-            // timer khác rỗng 
+    if (window.scrollY >= 225) {
+      getEle("header").style.position = 'fixed';
+      getEle("header").style.top = "-79px";
+    }
 
-            getEle("header").style.top = "-89px";
-          }
-          timer = this.setTimeout(function () {
-            getEle("header").style.top = "0";
+    if (window.scrollY >= 228) {
+      getEle("header").classList.add('header-fixed')
+      if (timer != null) {
+        this.clearTimeout(timer);
+        // timer khác rỗng 
 
-          }, 500)
-        }
-    
+        getEle("header").style.top = "-79px";
+      }
+      timer = this.setTimeout(function () {
+        getEle("header").style.top = "0";
+      }, 500)
+    }
+
 
   })
 

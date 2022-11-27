@@ -80,6 +80,7 @@ body {
 //Variables
 $bg-pink-1: #b21980;
 $bg-pink-2: #b61984;
+$bg-pink-3: #aa017e;
 $bg-violet: #dcd1f0;
 $bg-white: #ffffff;
 
@@ -190,27 +191,35 @@ $breakpoints: (
 @include responsive('extra-large') {
 
 
-    #mySidenav {
-        display: block !important;
-    }
+    // #mySidenav {
+    //     display: block !important;
+    // }
+
     header {
         background-color: $bg-white;
         box-shadow: 0 0 5px -2px;
         height: 59px;
+
         .container {
-            display: none ;
+            display: none;
         }
+
         #open {
             display: block !important;
-    }
+        }
+
+        .closebtn {
+            display: block !important;
+        }
     }
 }
 
 
 
 #mySidenav {
-    display: none;
+    // display: none;
     width: 320px;
+    z-index: 2;
 
     a {
         padding: 15px 8px 15px 8px;
@@ -263,7 +272,9 @@ $breakpoints: (
     }
 }
 
-#main{padding: 0 !important;}
+#main {
+    padding: 0 !important;
+}
 
 header {
     position: absolute;
@@ -273,6 +284,10 @@ header {
     transition: all 300ms ease;
 
     #open {
+        display: none;
+    }
+
+    .closebtn {
         display: none;
     }
 
@@ -439,6 +454,7 @@ header {
 
         .content-left {
             width: 100%;
+            z-index: 1;
 
             p {
                 color: $bg-pink-2;
@@ -478,7 +494,7 @@ header {
         position: relative;
 
         .item {
-            padding: $pd-XY-item;
+            margin-bottom: $mg-b-4;
 
             .card {
                 border: none;
@@ -695,7 +711,7 @@ header {
 
 footer {
     color: $color-white;
-    background-color: #181818;
+    background-color: $bg-pink-3;
     font-size: $fs-4;
 
     .container {
@@ -726,11 +742,17 @@ footer {
 
             input {
                 text-align: center;
+                border: 1px solid #b31b8b;
+                outline: none;
                 width: 90%;
                 height: 50px;
                 border-radius: $br-radius-InputFooter;
                 background-color: transparent;
                 color: $color-white;
+
+                &:focus {
+                    border-color: $color-white
+                }
             }
 
             button {
