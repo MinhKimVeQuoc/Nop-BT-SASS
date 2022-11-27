@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./cssdemo/demo.css">
+
+</head>
+
+<body id="body">
+    <div id="mySidenav" class="sidenav text-center">
+        <a class="navbar-brand" href="#">
+            <img src="./img/crest.png" alt="Logo">
+        </a>
+        
+        <div>
+            <ul>
+                <li> <a href="#">Home</a></li>
+
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Elements</a></li>
+            </ul>
+
+            <div id="menu-btnIcon" class="my-4">
+                <button class="btn btn-color"><a href="tel:+"><i class="fa-solid fa-phone-flip"></i> (+1) 555
+                        234-8765</a></button>
+                <div>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+        <header id="header">
+            <span id="open" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+            <span id= href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></span>
+
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="#">
+                        <img src="./img/crest.png" alt="Logo">
+                    </a>
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <!-- Dropdown -->
+                            <li class="nav-item dropdown active-1">
+                                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Home
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown active-2">
+                                <a class="nav-link " href="#" id="navbardrop" data-toggle="dropdown">
+                                    About
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Courses
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Blog
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Elements
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <div id="menu-btnIcon">
+                            <button class="btn btn-color"><a href="tel:+"><i class="fa-solid fa-phone-flip"></i> (+1)
+                                    555
+                                    234-8765</a></button>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+        <section id="content">
+            <img id="img-1" class="img-fluid" src="./img/yellow_top_wave_01.png" alt="">
+            <div class="container">
+                <div class="content-left">
+                    <div class="left-items">
+                        <p class="text-uppercase">about us</p>
+                        <h1>The language teaching experts</h1>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="right-items">
+                        <img class="img-fluid" src="./img/hero_team.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <img id="img-2" class="img-fluid" src="./img/Violet_top_left_wave.png" alt="">
+        </section>
+
+        <section id="team-us" class="text-center">
+            <div class="container">
+                <div class="row warp-1">
+                    <div class="col-lg-3 col-md-6 col-12  item item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_1.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Italia</p>
+                                <h4 class="card-title">July Robert</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_2.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">French</p>
+                                <h4 class="card-title">John Stone</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_3.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Japannese</p>
+                                <h4 class="card-title">Emma Stone</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6  col-12 item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_4.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Chinese</p>
+                                <h4 class="card-title">Mark Lee</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row warp-2">
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_5.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Russian</p>
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_6.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Sweden</p>
+                                <h4 class="card-title">Jane Smith</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_7.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Spanish</p>
+                                <h4 class="card-title">Hana Alverez</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12  item">
+                        <div class="card">
+                            <img class="img-fluid" src="./img/teacher_8.jpg" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Italia</p>
+                                <h4 class="card-title">July Robert</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <img id="img-3" class="img-fluid" src="./img/Wave_White_bottom_right_shape_01.png" alt="">
+
+        </section>
+
+        <section id="course" class="pt-5">
+            <div class="container py-5">
+
+                <div class="course-left">
+
+                    <img class="img-fluid" src="./img/conatct_inner.png" alt="">
+
+                </div>
+                <div class="course-right">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h2 class="text-uppercase">Find Your Course</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="warp-contact">
+                                <div class="contact-name">
+                                    <span><i class="fa-solid fa-user-tie"></i></span>
+                                    <span><input type="text" placeholder="name"></span>
+                                </div>
+
+                                <div class="contact-email">
+                                    <span><i class="fa-regular fa-envelope"></i></span>
+                                    <span><input type="email" placeholder="Email"></span>
+                                </div>
+                            </div>
+
+                            <div class="warp-contact">
+                                <div class="contact-list">
+                                    <span><i class="fa-solid fa-graduation-cap"></i></span>
+                                    <span>
+                                        <select name="" id="">
+                                            <option value="English">English</option>
+                                            <option value="French">French</option>
+                                            <option value="Spanish">Spanish</option>
+                                            <option value="German">German</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="warp-contact">
+                                <div class="contact-mess">
+                                    <span><i class="fa-regular fa-comment-dots"></i></span>
+                                    <span>
+                                        <textarea name="message" id="" placeholder="message" cols="40"
+                                            rows="10"></textarea>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer ">
+                            <button class="btn btn-color text-uppercase "><a href="#url">send</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="img-fluid" id="img-4" src="./img/accent_bottom_wave_01.png" alt="">
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <h4>Contact us</h4>
+                        <p><i></i>Franklin St, Greenpoint Ave</p>
+                        <p><i></i>+2342 5446 67</p>
+                        <p><i></i>Monday - Friday: 8 AM - 5 PM</p>
+
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <h4>Quick Links</h4>
+                        <div class="warp">
+                            <ul class="list-unstyled">
+                                <li>Home</li>
+                                <li>Courses</li>
+                                <li>Schedule</li>
+                                <li>Blog</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <h4>About</h4>
+                        <div class="warp">
+                            <ul class="list-unstyled">
+                                <li>About Us</li>
+                                <li>Events</li>
+                                <li>Get Quote</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <h4>Newsletter</h4>
+                        <div class="new-warp">
+                            <input type="email" placeholder="Your Email">
+                            <button class="btn btn-color">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./scr/controllers/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,747 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/**
+
+10px = 0.625rem
+12px = 0.75rem
+14px = 0.875rem
+16px = 1rem (base)
+18px = 1.125rem
+20px = 1.25rem
+24px = 1.5rem
+30px = 1.875rem
+32px = 2rem
+
+
+*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin border-style($br, $br-color, $br-radius, $pd) {
+    border: $br solid $br-color;
+    border-radius: $br-radius;
+    padding: $pd;
+    overflow: hidden;
+}
+
+@mixin input-text-focus($br-color, $b-shadow, $oL) {
+    border-color: $br-color, ;
+    box-shadow: $b-shadow;
+    outline: $oL;
+}
+
+@mixin input-size($max-w, $max-h) {
+    width: $max-w;
+    height: $max-h;
+}
+
+@mixin input-outline($oL, $br) {
+    outline: $oL;
+    border: $br;
+}
+
+@mixin style-Button($bg-color, $pd, $fs, $br-radius) {
+    // background-color: $bg-color !important;
+    padding: $pd !important;
+    font-size: $fs !important;
+    border-radius: $br-radius !important;
+    box-shadow: 0 0 0 24px $bg-color inset;
+}
+
+@mixin style-Button-Hover($bg-color, $color, $br-color) {
+    background-color: $bg-color !important;
+    color: $color !important;
+    border: 1px solid $br-color !important;
+    box-shadow: 0 0 0 1px $bg-color inset;
+}
+
+@mixin responsive($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen )) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn '`#${screen}` không tồn tại';
+    }
+
+}
+
+
+//Variables
+$bg-pink-1: #b21980;
+$bg-pink-2: #b61984;
+$bg-violet: #dcd1f0;
+$bg-white: #ffffff;
+
+$color-white: #ffffff;
+$color-pink: #b21980;
+$color-dark1: #181818;
+
+$fs-1: 11px;
+$fs-2: 12px;
+$fs-3: 13px;
+$fs-4: 14px;
+$fs-5: 15px;
+$fs-6: 20px;
+$fs-7: 60px;
+
+
+
+$fw-1: 400;
+$fw-2: 500;
+$fw-3: 600;
+
+// magin-top
+$mg-t-1: 30px; // id: course <h2>
+$mg-t-2: 50px; // <footer> class: "new-warp"
+
+
+
+//magin-bottom
+$mg-b-1: 5px; // // id: team-us p nth-child(1)
+$mg-b-2: 10px; // // id: team-us p nth-child(3) || <footer> <p>
+$mg-b-3: 15px; // id: course class: warp-contact
+$mg-b-4: 30px; // <footer> <h4>
+$mg-b-5: 40px; // id: team-us class: warp-1
+
+
+//magin-right
+$mg-r: 7px; //id: course class: contact-name
+
+//magin-left
+$mg-l: -6px; //<header> class: nav-link
+
+
+
+// magin-X: Left Right
+$mg-X-1: 10px; //  i
+$mg-X-2: 15px; // <header> class: nav-item
+
+//pading
+$pd-X-1: 15px; //id="menu-btnIcon" <button>
+$pd-X-2: 20px; // id: team-us class: item
+$pd-X-3: 50px; //id: course <button>
+$pd-X-4: 80px; //<footer><button>
+
+$pd-Y-1: 10px; //id="menu-btnIcon" <button>
+$pd-Y-2: 12px; //<footer><button>
+$pd-Y-3: 13px; //id: course <button>
+$pd-Y-4: 75px; // id: content
+
+$pd-t-1: 12px; // 0,75rem =12px  ||  id:course class: card-footer padding ||  full t r b l 
+$pd-t-2: 15px; // id: team-us
+
+$pd-r-1: 18px; // 1.25rem = 18px ||  id:course class: card-footer padding ||  full t r b l
+
+$pd-b-1: 60px; // 1.25rem *3 = 60px  || id:course class: card-footer padding  || full t r b l
+
+$pd-l-1: 18px; // 1.25rem = 18px  || id:course class: card-footer padding  || full t r b l
+
+
+//<header> id="menu-btnIcon" <button>
+$pd-XY-Button-header: $pd-Y-1 $pd-X-1;
+
+
+// id= "course"
+$pd-XY-Button-course-CardFooter: $pd-Y-3 $pd-X-3; //id: course <button>
+$pd-XY-CaRfooter: $pd-t-1 $pd-r-1 $pd-b-1 $pd-l-1; // class: card-footer
+
+
+//id= "content"
+$pd-XY-Content: $pd-Y-4 0; // id: content
+
+// id: team-us
+$pd-top-TeamUs: $pd-t-2; //id: team-us
+$pd-XY-item: 0 $pd-X-2; // id: team-us class: item
+
+//<footer>
+$pd-Y-li: $pd-Y-1 0; // <li>
+$pd-XY-Button-FooterNew: $pd-Y-2 $pd-X-4; //<footer><button>
+
+$br-radius-1: 15px;
+$br-radius-2: 20px;
+$br-radius-3: 25px;
+$br-radius-4: 50%;
+
+$br-radius-course-Card: $br-radius-2; // id: course class: card
+$br-radius-teamUs-Card: $br-radius-1; // id: team-us class: card
+$br-radius-InputFooter: $br-radius-3; //<footer> <input>
+$br-radius-navAfter: $br-radius-4; // <header> calss: nav-link &::after
+
+$br-radius-Button: 25px; // global button
+
+$breakpoints: (
+    'extra-large': 1200px,
+    'large':992px,
+    'medium':768px,
+    'small': 576px,
+);
+
+@include responsive('extra-large') {
+
+
+    #mySidenav {
+        display: block !important;
+    }
+    header {
+        background-color: $bg-white;
+        box-shadow: 0 0 5px -2px;
+        height: 59px;
+        .container {
+            display: none ;
+        }
+        #open {
+            display: block !important;
+    }
+    }
+}
+
+
+
+#mySidenav {
+    display: none;
+    width: 320px;
+
+    a {
+        padding: 15px 8px 15px 8px;
+        font-size: $fs-4;
+    }
+
+    background-color: $bg-white;
+    scroll-behavior: smooth;
+
+
+
+    button {
+        @include style-Button($bg-pink-1 , $pd-XY-Button-header, $fs-4 , $br-radius-Button);
+        transform: scaleX(1);
+        transition: all 300ms ease;
+        margin-bottom: $mg-b-3;
+        // box-shadow: 0 0 0 24px $bg-pink-2 inset;
+
+        a {
+            color: $color-white;
+            text-decoration: none;
+            padding: 0px 8px 0px 8px
+        }
+
+        &:hover {
+            @include style-Button-Hover($bg-white, $color-pink, $color-pink);
+
+            // box-shadow: 0 0 0 1px $bg-pink-2 inset;
+            a {
+                color: $color-pink;
+                text-decoration: none;
+
+            }
+        }
+    }
+
+}
+
+//class của header
+.header-fixed {
+    background-color: $bg-white;
+    box-shadow: 0 0 5px -2px;
+
+    img {
+        display: none;
+    }
+
+    .nav-item {
+        height: auto !important;
+    }
+}
+
+#main{padding: 0 !important;}
+
+header {
+    position: absolute;
+    width: 100%;
+    color: $color-dark1 !important;
+    z-index: 2;
+    transition: all 300ms ease;
+
+    #open {
+        display: none;
+    }
+
+    // img {
+    //     position: absolute;
+    // }
+
+    // .navbar {
+    //     position: relative;
+    //     display: grid;
+    //     grid-auto-flow: column;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     padding: 0.5rem 1rem;
+    // 
+    // position: absolute;
+    // grid-auto-flow: column;
+    // gap: 10rem;
+    // }
+    .navbar-expand-lg {
+
+        .navbar-brand {
+            img {
+                position: unset;
+                width: 80px !important;
+            }
+        }
+
+        .navbar-collapse {
+            text-align: center;
+            // display: flex !important;
+            justify-content: right;
+
+            .nav-item {
+                height: 80px;
+                margin: 0 $mg-X-1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+
+                .nav-link {
+                    color: $color-dark1;
+                    position: relative;
+                    font-size: $fs-2;
+                    font-weight: $fw-3;
+
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        // width: 3px;
+                        // height: 3px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: $br-radius-navAfter;
+                        background-color: $bg-pink-1;
+                        bottom: -20px;
+                        left: 50%;
+                        margin-left: $mg-l;
+                        transform: scale(0);
+                        transition: 300ms ease all;
+                    }
+
+                    &:hover {
+                        color: $color-pink;
+
+                        &::after {
+                            width: 13px;
+                            height: 13px;
+                            // bottom: -26px;
+                            // left: 23px;
+                            transform: scale(1);
+                        }
+                    }
+
+                }
+
+
+            }
+
+            .active-1 {
+                .nav-link {
+                    color: $color-pink;
+                }
+            }
+
+            .active-2 {
+                .nav-link::after {
+                    transform: scale(1);
+                }
+
+                &:hover {
+                    & ::after {
+                        width: 13px;
+                        height: 13px;
+                    }
+                }
+
+            }
+
+            #menu-btnIcon {
+                display: flex;
+                align-items: center;
+
+
+
+                i {
+                    margin: 0 $mg-X-1;
+                    font-size: $fs-3;
+
+                    &:hover {
+                        color: $bg-pink-1;
+                    }
+                }
+
+
+                button {
+                    @include style-Button($bg-pink-1 , $pd-XY-Button-header, $fs-4 , $br-radius-Button);
+                    transform: scaleX(1);
+                    transition: all 300ms ease;
+
+                    a {
+                        color: $color-white;
+                        text-decoration: none;
+                    }
+
+                    &:hover {
+                        @include style-Button-Hover($bg-white, $color-pink, $color-pink);
+
+                        // box-shadow: 0 0 0 1px $bg-pink-2 inset;
+                        a {
+                            color: $color-pink;
+                            text-decoration: none;
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+
+}
+
+#content {
+    position: relative;
+    padding: $pd-XY-Content;
+
+    #img-1 {
+        position: absolute;
+        top: 0;
+    }
+
+    .container {
+
+        display: flex;
+        align-items: center;
+
+        .content-left {
+            width: 100%;
+
+            p {
+                color: $bg-pink-2;
+                font-size: $fs-6;
+                font-weight: $fw-3;
+
+            }
+
+            h1 {
+                font-size: $fs-7;
+                font-weight: $fw-3;
+
+            }
+
+
+        }
+
+        .content-right {
+            width: 100%;
+        }
+
+    }
+
+    #img-2 {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+#team-us {
+    padding-top: $pd-top-TeamUs;
+    background-color: $bg-violet;
+    position: relative;
+
+    .container {
+        z-index: 1;
+        position: relative;
+
+        .item {
+            padding: $pd-XY-item;
+
+            .card {
+                border: none;
+                overflow: hidden;
+                border-radius: $br-radius-teamUs-Card;
+                transition: all 0.5s ease;
+
+                &:hover {
+                    box-shadow: 0px 10px 30px -10px $color-dark1;
+                }
+
+                img {
+                    object-fit: fill;
+                    transition: all 0.5s ease-out;
+
+                    &:hover {
+                        // scale3d: X,Y,Z
+                        transform: scale3d(1.05, 1.05, 1);
+                    }
+                }
+
+                p:nth-child(1) {
+                    color: $color-pink;
+                    font-size: $fs-1;
+                    font-weight: $fw-3;
+                    margin-bottom: $mg-b-1;
+                    text-transform: uppercase;
+                }
+
+                h4 {
+                    font-weight: $fw-3;
+                }
+
+                p:nth-child(3) {
+                    font-size: $fs-5;
+                    font-weight: $fw-2;
+                    margin-bottom: $mg-b-2;
+                }
+
+            }
+
+
+        }
+    }
+
+    .warp-1 {
+        margin-bottom: $mg-b-5;
+    }
+
+    .warp-2 {
+        margin-bottom: $mg-b-5;
+    }
+
+    #img-3 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+}
+
+#course {
+    position: relative;
+    width: 100%;
+
+    #img-4 {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        // flex-flow: row wrap;
+        justify-content: center;
+        z-index: 1;
+
+        .card {
+            box-shadow: 0px 8px 20px -8px $color-dark1;
+        }
+
+        .course-right {
+            z-index: 1;
+
+            .card {
+                background-color: $color-white;
+                border-radius: $br-radius-course-Card;
+
+
+                .card-header {
+                    background-color: unset;
+                    border-bottom: none;
+
+                    h2 {
+                        margin-top: $mg-t-1;
+                        font-weight: $fw-3;
+                    }
+                }
+
+                .card-body {
+
+
+                    .warp-contact {
+
+                        display: flex;
+                        margin-bottom: $mg-b-3;
+
+                        .contact-name {
+                            position: relative;
+                            margin-right: $mg-r;
+                            // @include border-style(1px, #e5e5e5, 20px, 0 5px 0 40px);
+
+                            &:focus-within {
+                                @include input-text-focus(#e5e5e5, 0px 0px 3px -1px, none);
+                            }
+                        }
+
+                        .contact-name,
+                        .contact-email {
+                            @include border-style(1px, #e5e5e5, 20px, 0 5px 0 40px);
+                        }
+
+                        .contact-email {
+                            position: relative;
+
+                            &:focus-within {
+                                @include input-text-focus(#e5e5e5, 0px 0px 3px -1px, none);
+                            }
+                        }
+
+                        input {
+                            @include input-outline(none, none);
+                            @include input-size(8.5rem, 2.5rem);
+                        }
+
+                        .contact-list {
+                            position: relative;
+                            max-width: 100%;
+                            @include border-style(1px, #e5e5e5, 20px, 0 5px 0 40px);
+
+                            &:focus-within {
+                                @include input-text-focus(#e5e5e5, 0px 0px 3px -1px, none);
+                            }
+
+                            select {
+                                position: relative;
+                                @include input-outline(none, none);
+                                @include input-size(20rem, 2.5rem);
+                            }
+
+                        }
+
+                        .contact-mess {
+                            position: relative;
+                            @include border-style(1px, #e5e5e5, 20px, 7px 5px 0 40px);
+
+                            &:focus-within {
+                                @include input-text-focus(#e5e5e5, 0px 0px 3px -1px, none);
+                            }
+
+                            textarea {
+                                // padding: 0 5px 0 30px;
+                                @include input-outline(none, none);
+                                @include input-size(20rem, 90px);
+                            }
+                        }
+
+                        i {
+                            top: 15px;
+                            left: 15px;
+                            line-height: 10px;
+                            font-size: $fs-1;
+                            position: absolute;
+                            color: $color-pink;
+                        }
+                    }
+                }
+
+                .card-footer {
+                    padding: $pd-XY-CaRfooter;
+                    background-color: transparent;
+                    border-top: none;
+
+                    button {
+                        @include style-Button($bg-pink-1 , $pd-XY-Button-course-CardFooter, $fs-2 , $br-radius-Button);
+                        transform: scaleX(1);
+                        transition: all 300ms ease;
+                        // box-shadow: 0 0 0 24px $bg-pink-2 inset;
+
+                        a {
+                            color: $color-white;
+                            text-decoration: none;
+                            font-weight: $fw-3;
+
+                        }
+
+                        &:hover {
+                            @include style-Button-Hover($bg-white, $color-pink, $color-pink);
+
+                            // box-shadow: 0 0 0 1px $bg-pink-2 inset;
+                            a {
+                                color: $color-pink;
+                                text-decoration: none;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+footer {
+    color: $color-white;
+    background-color: #181818;
+    font-size: $fs-4;
+
+    .container {
+        p {
+            margin-bottom: $mg-b-2;
+        }
+
+        h4 {
+            margin-bottom: $mg-b-4;
+            font-weight: $fw-3;
+        }
+
+
+        .warp {
+            display: flex;
+
+            ul {
+                li {
+                    padding: $pd-Y-li;
+                    border-bottom: 1px solid $bg-pink-1;
+                }
+            }
+        }
+
+
+        .new-warp {
+            margin-top: $mg-t-2;
+
+            input {
+                text-align: center;
+                width: 90%;
+                height: 50px;
+                border-radius: $br-radius-InputFooter;
+                background-color: transparent;
+                color: $color-white;
+            }
+
+            button {
+                @include style-Button($bg-white , $pd-XY-Button-FooterNew, $fs-4 , $br-radius-Button);
+                transition: all 300ms ease;
+
+                &:hover {
+                    @include style-Button-Hover($bg-pink-2, $color-white, $color-white);
+
+                }
+            }
+        }
+    }
+}
